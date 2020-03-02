@@ -1,0 +1,68 @@
+const taxs = document.querySelector("taxs");
+   const trate = document.querySelector("#trate");
+   const earning = document.querySelector("#earning");
+   const err = document.querySelector("#error");
+   const tincome = document.querySelector("#max") ;
+ 
+ 
+ const Submit = document.querySelector("#submit");
+ const Clear = document.querySelector("#clear");
+ 
+ 
+ Submit.addEventListener("click",function() {
+    const fres = tincome.value;
+        if(fres<=48535){
+
+          let x =(fres *.15).toFixed(2);
+          taxs.textContent = '$'+x;
+          trate.textContent=(x/fres*100).toFixed(2);
+          let y=(fres-x).toFixed(2); 
+          earning.textContent = '$' + y; 
+     }
+
+         else if (fres > 48535 && fres <=97069 ) {
+         let x= ((fres -48535 ) *.205 + 7280).toFixed(2);
+         taxs.textContent ='$'+ x;
+         trate.textContent=(x/fres*100).toFixed(2);
+         let y=(fres-x).toFixed(2);  
+         earning.textContent = '$' + y;
+
+         }
+
+        else if (fres > 97069 && fres <=150473 ) {
+        let x= ((fres - 97069) *.26 + 17230).toFixed(2);
+        taxs.textContent = '$' + x;
+        trate.textContent=(x/fres*100).toFixed(2);
+        let y=(fres-x).toFixed(2); 
+        earning.textContent = '$' + y;
+ 
+     }
+
+        else if (fres > 150473 && fres <=214368 ) {
+        let x= ((fres - 150473) *.29 +31115).toFixed(2) ;
+        taxs.textContent = '$' + x;
+        trate.textContent=(x/fres*100).toFixed(2);
+        let y=(fres-x).toFixed(2);
+        earning.textContent = '$' + y;
+
+
+     }
+        
+        else if (fres>='a'||fres>='A') {
+        err.textContent ="Error: Enter a Number";
+     }
+
+     else  {
+            
+      let x= ((fres - 214368) *.33 +49645).toFixed(2) ;
+      taxs.textContent = '$' + x;
+      trate.textContent=(x/fres*100).toFixed(2);
+      let y=(fres-x).toFixed(2);  
+      earning.textContent = '$' + y;
+
+    }
+}
+ );
+     
+
+     

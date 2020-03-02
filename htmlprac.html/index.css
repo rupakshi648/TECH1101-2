@@ -1,0 +1,15 @@
+body {
+    font-family: fantasy;
+    font-size: xx-small;
+    background-color: #8a2be2;
+    border:1px solid black
+    
+} 
+
+pop {
+    font-size: xx-small;
+    padding:50 px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text align:centre;
+    
+}
